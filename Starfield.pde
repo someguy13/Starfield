@@ -227,8 +227,8 @@ void falcon(int x, double y, double size){
   	triangle((float)y,(float)x+(float)size/5,(float)y,(float)x+(float)size/2,(float)y-(float)size,(float)x+(float)size/5);
   	ellipse((float)y,(float)x,(float)size,(float)size);
   	arc((float)y,(float)x,(float)size,(float)size,-PI/4,PI/4);
-  	arc((float)y,(float)x,(float)size-(float)size/10,(float)size-(float)size/10,PI*4/9,PI*5/9,PIE);
-  	arc((float)y,(float)x,(float)size-(float)size/10,(float)size-(float)size/10,-PI*5/9,-PI*4/9,PIE);
+  	arc((float)y,(float)x,(float)size-(float)size/10,(float)size-(float)size/10,PI*4/9,PI*5/9);
+  	arc((float)y,(float)x,(float)size-(float)size/10,(float)size-(float)size/10,-PI*5/9,-PI*4/9);
   	beginShape();
   	vertex((float)y - (float)size/50,(float)x - (float)size * 0.14);
   	vertex((float)y - (float)size * 0.3,(float)x - (float)size * 0.66);
