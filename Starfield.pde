@@ -1,6 +1,7 @@
-Particle[] p = new Particle[100];
+Particle[] p = new Particle[300];
 Bullet b = new Bullet();
 boolean shoot = false;
+boolean target = false;
 void setup()
 {
 	size(600,600);	
@@ -59,12 +60,24 @@ void draw()
 	vertex(205,545);
 	endShape(CLOSE);
 	strokeWeight(1);
+	ellipse(300,502.5,60,60);
 	fill(7,13,18);
-	
 	rect(225,500,20,65,5);
 	rect(355,500,20,65,5);
 	rect(290,565,20,75);
 	rect(225,545,150,20);
+	stroke(255);
+	line(300,517.5,300,532.5);
+	line(300,487.5,300,472.5);
+	line(285,502.5,270,502.5);
+	line(315,502.5,330,502.5);
+	if(target){
+		stroke(255,0,0);
+		noFill();
+		ellipse(300,502.5,20,20);
+		line(300,487.5,300,517.5);
+		line(285,502.5,315,502.5);
+	}
 
 }
 class NormalParticle implements Particle
@@ -148,6 +161,12 @@ class OddballParticle implements Particle
 			mySize = Math.random() * 20 + 30;
 		}
 
+		if(myY < 100 && myY > -100){
+			target = true;
+		}
+		else{
+			target = false;
+		}
 	}
 }
 class JumboParticle extends NormalParticle
